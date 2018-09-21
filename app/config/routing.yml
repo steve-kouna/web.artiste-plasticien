@@ -1,3 +1,7 @@
+admin:
+    resource: "@AdminBundle/Resources/config/routing.yml"
+    host: "%admin_domain%"
+
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
