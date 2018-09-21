@@ -1,0 +1,4 @@
+transport_index:
+    path:     /
+    methods:  [GET]
+    defaults: { _controller: AdminBundle:Transport:index }
