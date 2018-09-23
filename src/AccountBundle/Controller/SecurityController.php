@@ -58,8 +58,8 @@ class SecurityController extends Controller {
         }
 
         return $this->render('@Account/Default/index.html.twig', [
-                    'form' => $form->createView()
-                ]
+                'form' => $form->createView()
+            ]
         );
     }
 
