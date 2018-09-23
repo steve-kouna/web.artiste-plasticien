@@ -1,6 +1,6 @@
 admin_dashboard:
-    resource: "routes/dashboard.yml"
+    resource: "@AdminBundle/Resources/config/routes/dashboard.yml"
 
 admin_transport:
     prefix:     /transport
-    resource: "routes/transport.yml"
+    resource: "@AdminBundle/Resources/config/routes/transport.yml"

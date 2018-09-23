@@ -1,3 +1,7 @@
+account:
+    resource: "@AccountBundle/Resources/config/routing.yml"
+    host:     "%account_domain%"
+
 admin:
     resource: "@AdminBundle/Resources/config/routing.yml"
-    host: "%admin_domain%"
+    host:     "%admin_domain%"

@@ -1,0 +1,4 @@
+account_homepage:
+    path:     /
+    methods: [GET, POST]
+    defaults: { _controller: AccountBundle:Security:Login }
