@@ -3,5 +3,23 @@
 {% block title %}Transport{% endblock %}
 
 {% block body %}
-    {{ dump(response) }}
+    <a href="{{ path('transport_add', {'token': token}) }}" title="">Ajouter</a>
+    <table>
+        <tr>
+            <th>Libellé</th>
+            <th>detail</th>
+            <th>Actions</th>
+        </tr>
+        {% for data in datas %}
+        <tr>
+            <td>{{ data.name }}</td>
+            <td>{{ data.detail }}</td>
+            <td>
+                <a href="{{ path('transport_show', {'token': token, 'id': data.id}) }}" title="{{ data.name }}">Afficher</a>
+                <a href="{{ path('transport_edit', {'token': token, 'id': data.id}) }}" title="{{ data.name }}">Modifier</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    
 {% endblock %}

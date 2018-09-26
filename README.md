@@ -1,4 +1,4 @@
-Symfony Standard Edition
+Artiste Plasticien web client
 ========================
 
 **WARNING**: This distribution does not support Symfony 4. See the

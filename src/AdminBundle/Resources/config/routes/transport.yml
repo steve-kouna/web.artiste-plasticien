@@ -13,5 +13,10 @@ transport_add:
     methods:  [GET, POST]
     defaults: { _controller: AdminBundle:Transport:new }
     
+transport_edit:
+    path:     /{id}/edit
+    methods:  [GET, POST]
+    defaults: { _controller: AdminBundle:Transport:edit }
+    
     
     

@@ -1,0 +1,20 @@
+{% extends "@Admin/layout_base.html.twig" %}
+
+{% block title %}Transport{% endblock %}
+
+{% block body %}
+<a href="{{ path('transport_add', {'token': token}) }}" title="">Ajouter</a> -- 
+<a href="{{ path('transport_index', {'token': token}) }}" title="">liste</a><br>
+
+{{ form_start(edit_form, {'attr': {'method': 'put'} }) }}
+{{ form_errors(edit_form) }}
+{{ form_errors(edit_form.name) }}
+{{ form_widget(edit_form.name) }}
+
+{{ form_errors(edit_form.detail) }}
+{{ form_widget(edit_form.detail) }}
+
+<button type="submit">save</button>
+
+{{ form_end(edit_form) }}
+{% endblock %}

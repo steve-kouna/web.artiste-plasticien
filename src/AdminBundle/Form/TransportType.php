@@ -56,6 +56,6 @@ class TransportType extends AbstractType {
      */
     public function getBlockPrefix()
     {
-        return 'adminbundle_Transport';
+        return 'admin_transport';
     }
 }

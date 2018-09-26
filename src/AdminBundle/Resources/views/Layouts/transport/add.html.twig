@@ -1,3 +1,9 @@
+{% extends "@Admin/layout_base.html.twig" %}
+
+{% block title %}Transport{% endblock %}
+
+{% block body %}
+<a href="{{ path('transport_index', {'token': token}) }}" title="">liste</a><br>
 {{ form_start(form) }}
 
 {{ form_errors(form.name) }}
@@ -9,3 +15,4 @@
 <button type="submit">save</button>
 
 {{ form_end(form) }}
+{% endblock %}

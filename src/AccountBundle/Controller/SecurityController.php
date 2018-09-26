@@ -52,7 +52,7 @@ class SecurityController extends Controller {
 
                     curl_close($curl);
 
-                    return $this->redirectToRoute('transport_add');
+                    return $this->redirectToRoute('transport_add', ['token' => $dataJson['access_token']]);
                 }
             }
         }
