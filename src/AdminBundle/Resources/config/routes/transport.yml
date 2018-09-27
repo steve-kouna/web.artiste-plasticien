@@ -1,0 +1,22 @@
+transport_index:
+    path:     /
+    methods:  [GET]
+    defaults: { _controller: AdminBundle:Transport:index }
+    
+transport_show:
+    path:     /{id}
+    methods:  [GET]
+    defaults: { _controller: AdminBundle:Transport:show }
+    
+transport_add:
+    path:     /add/
+    methods:  [GET, POST]
+    defaults: { _controller: AdminBundle:Transport:new }
+    
+transport_edit:
+    path:     /{id}/edit
+    methods:  [GET, POST]
+    defaults: { _controller: AdminBundle:Transport:edit }
+    
+    
+    

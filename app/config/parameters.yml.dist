@@ -2,27 +2,18 @@
 # Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
 # https://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
 parameters:
-    database_host: 127.0.0.1
-    database_port: ~
-    database_name: symfony
-    database_user: root
-    database_password: ~
-    # You should uncomment this if you want to use pdo_sqlite
-    #database_path: '%kernel.project_dir%/var/data/data.sqlite'
+    secret: 8f64953a0356d5de4626b5dc3457a24aeb54ec26
 
-    mailer_transport: smtp
-    mailer_host: 127.0.0.1
-    mailer_user: ~
-    mailer_password: ~
+    admin_domain:             admin.artiste-plasticien.com
+    partner_domain:           partner.artiste-plasticien.com
+    gallery_domain:           gallery.artiste-plasticien.com
+    account_domain:           account.artiste-plasticien.com
+    api_domain:               api.artiste-plasticien.com
+    redirect_uri:             www.artiste-plasticien.com
 
-    # A secret key that's used to generate certain security-related tokens
-    secret: ThisTokenIsNotSoSecretChangeIt
+    client_id:                1_1yqfuy07h6pwg44cg80g88kwcs0c4k8c4ws84co4kkckko8gcg
+    client_secret:            5tbepzr3a8kckkossco88gow8c8ww0s04wwk44ccgoooo0kkc4
+    api_uri:                  '%api_domain%'
 
-    admin_domain: admin.artiste-plasticien.com
-    partner_domain: partner.artiste-plasticien.com
-    gallery_domain: gallery.artiste-plasticien.com
-    api_domain: api.artiste-plasticien.com
-
-    client_id: 1_1yqfuy07h6pwg44cg80g88kwcs0c4k8c4ws84co4kkckko8gcg
-    client_secret: 5tbepzr3a8kckkossco88gow8c8ww0s04wwk44ccgoooo0kkc4
-    api_url:  '%api_domain%'
+    recaptcha_public_key:     6LeATQETAAAAAFUbk-oyBdHLZwdaw_7i9xI8dIu3
+    recaptcha_private_key:    6LeATQETAAAAAO2UUT4lZQN7Kf_EYjnV_P436vXE

@@ -13,10 +13,13 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
             new Symfony\Bundle\MonologBundle\MonologBundle(),
-            new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
-            new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new AppBundle\AppBundle(),
+            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+            new EWZ\Bundle\RecaptchaBundle\EWZRecaptchaBundle(),
+            
+            new AdminBundle\AdminBundle(),
+            new AccountBundle\AccountBundle(),
+            new GalleryBundle\GalleryBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

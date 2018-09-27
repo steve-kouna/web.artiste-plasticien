@@ -1,0 +1,7 @@
+admin_dashboard:
+    prefix:     /{token}
+    resource: "@AdminBundle/Resources/config/routes/dashboard.yml"
+
+admin_transport:
+    prefix:     /{token}/transport
+    resource: "@AdminBundle/Resources/config/routes/transport.yml"

@@ -1,0 +1,11 @@
+{% extends "@Admin/layout_base.html.twig" %}
+
+{% block title %}Transport{% endblock %}
+
+{% block body %}
+    <a href="{{ path('transport_add', {'token': token}) }}" title="">Ajouter</a> -- 
+    <a href="{{ path('transport_index', {'token': token}) }}" title="">liste</a>
+    <h1>{{ response.name }}</h1>
+    <hr>
+    {{ response.name|raw }}
+{% endblock %}
