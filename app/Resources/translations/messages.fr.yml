@@ -1,0 +1,81 @@
+header:
+    menu:
+        home:        Accueil
+        gallery:     Galerie
+        courses:     Cours
+        agenda:      Aganda
+        blog:        Blog
+        about:       A-Propos
+        faq:         F.A.Q.
+        partner:     Partenaires
+        contact:     Contact
+        inscription: Inscription
+        connexion:   Connexion
+        deconnexion: Déconnexion
+        dashboard:   Tableau de bord
+
+    slogan: Votre Galerie d'art virtuelle
+
+home:
+  label_phone:     Contacter nous au
+  label_email:     ou par mail
+  label_artworks:  '&oelig;uvres récentes'
+
+
+footer:
+    resum: Nous suivre sur
+
+courses:
+    title:       Cours & Astuces
+    authors:     'Auteurs : '
+    author:      'Auteur : '
+    search:      Resultat de la recherche
+    update:      Mis &agrave; jours le
+    title_small: Former vous le plus simplement possible ...
+    admin:
+      title:    Mes Cours
+      creation: Ajout d'un cours
+      add:      Ajouter un cours
+      update:   Mise à jour
+    show:
+        introduction: Introduction
+    title_2: Vignette des cours par rubrique
+
+account:
+    profile: Mon Profil
+
+office:
+    contact:
+        form:
+            title: Remplissez le formulaire
+            submit: Envoyer
+            name: Nom & Prénom
+            email: Adresse Mail
+            tel: Téléphone
+            objet: Objet
+            description: Description
+        messagetitle: Votre requête a été envoyé.
+        message: Nous vous recontacterons dans des brefs délais.
+    flash:
+        ok: >
+            <h4>Votre requête a été envoyé</h4> Nous vous recontactons.
+
+search:
+    placeholder: Saisir ici ...
+    
+    
+about: >
+    <strong>Artiste plasticien</strong> est site de promotion de <strong>l’art plastique</strong>. Il offre la possibilité aux personnes passionnées d’art de pouvoir rentabilisé leur création tout en apportant et augmentant leurs connaissances. <br>
+    Il est composé principalement de deux modules :<br>
+    -	Module de gestion de la connaissance (<a href="../courses/" title="Cours">Cours</a>) ;<br>
+    -	Module de rentabilité des artistes (<a href="../gallery/catalog/" title="Galerie">Galerie</a>).
+
+gallery:
+    title: Galerie des œuvres
+    small_title:  Toute les images des oeuvres publiées ne doivent être reproduites sur quelles que formes que se soit sous peine de poursuites judiciaires.
+    deliver: Livraison
+    basket:
+        index: Votre panier
+
+account:
+    register: Je m'inscris maintenant

@@ -1,0 +1,80 @@
+header:
+    menu:
+        home:        Home
+        gallery:     Gallery
+        courses:     Courses
+        agenda:      Agenda
+        blog:        News
+        about:       About
+        faq:         F.A.Q.
+        partner:     Partenaires
+        contact:     Contact
+        inscription: Register
+        connexion:   LogIn
+        deconnexion: LogOut
+        dashboard:   Dashboard
+
+    slogan: Your Virtual Art Gallery
+
+home:
+  label_phone:     Contact us at
+  label_email:     or by mail
+  label_artworks:  'Recent works'
+
+
+footer:
+    resum: Follow us on
+
+courses:
+    title:       Our Courses
+    authors:     'Authors : '
+    author:      'Authors : '
+    search:      Result of the research
+    update:      Updated
+    title_small: Train you as simply as possible ...
+    admin:
+      title:    My courses
+      creation: Adding a course
+      add:      Add a course
+      update:   Update
+    show:
+        introduction: Introduction
+
+account:
+    profile: My profile
+
+office:
+    contact:
+        form:
+            title: Complete the form
+            submit: To send
+            name: Last name and first name
+            email: Mail address
+            tel: Phone
+            objet: Objet
+            description: Description
+        messagetitle: Your request has been sent.
+        message: We will contact you shortly.
+    flash:
+        ok: >
+            <h4>Your request has been sent</h4> We will contact you.
+
+search:
+    placeholder: Enter here ...
+    
+    
+about: >
+    <strong>Artiste plasticien</strong> est site de promotion de <strong>l’art plastique</strong>. Il offre la possibilité aux personnes passionnées d’art de pouvoir rentabilisé leur création tout en apportant et augmentant leurs connaissances. <br>
+    Il est composé principalement de deux modules :<br>
+    -	Module de gestion de la connaissance (<a href="../courses/" title="Cours">Cours</a>) ;<br>
+    -	Module de rentabilité des artistes (<a href="../gallery/catalog/" title="Galerie">Galerie</a>).
+
+gallery:
+    title: Our Works
+    small_title:  Any reproduction is liable to prosecution
+    deliver: Delivery
+    basket:
+        index: your basket
+
+account:
+    register: Sign up now

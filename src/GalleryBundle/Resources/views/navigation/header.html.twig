@@ -1,0 +1,112 @@
+<div class="header hidden-xs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center" style="margin-bottom: -10px">
+                <span style="color: #FFFFFF">
+                    <a href="tel:{{ tel }}" title="{{ tel }}" style="color: #FFFFFF"> 
+                        <i class="fa fa-phone"></i>&nbsp;{{ tel }}
+                    </a> / 
+                    <a href="mailto:{{ mail }}" title="{{ mail }}" style="color: #FFFFFF">
+                        <i class="fa fa-envelope"></i>&nbsp;{{ mail }}
+                    </a>
+                    {% if is_granted('ROLE_ADMIN') %}
+                    | <a  style="color: #FFFFFF" class="text-uppercase" href="#"><i class="glyphicon glyphicon-dashboard"></i> {{ 'header.menu.dashboard'|trans }} </a>
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+        <div class="row" id="header">
+            <center>
+                <div class="col-md-7 col-sm-5">
+                    <a href="#" title="Artiste Plasticien">
+                        {% image '@GalleryBundle/Resources/public/img/apBlanc.png' %}
+                            <img src="{{ asset_url }}" alt="Artiste Plasticien | {{ 'header.slogan'|trans }}" width="65" height="65" id="logoAP" style="margin-top: -10px;" >
+                        {% endimage %}
+                    </a>
+                    <h1 class="text-nowrap text-uppercase text-center nameApp hidden-sm" id="nameApp"><a href="#" title="Artiste Plasticien | {{ 'header.slogan'|trans }}" style="color: white; text-decoration: none">Artiste Plasticien</a></h1><small class="text-muted hidden-sm" id="subtitle" style="color: #FFFFFF; font-size: 20px; margin-top: -20px"> {{ 'header.slogan'|trans }} </small>
+                </div>
+            </center>
+            <center>
+                <div class="col-md-5 col-sm-7">
+                    {#<div>#}
+                        {#{% if basket.basketElements != null %}#}
+                            {#{% trans with {'price': basket.getTotal(true)|number_format_currency(basket.currency.label, {}, {}, basket.locale), 'count_item': basket.countBasketElements} from 'SonataBasketBundle' %}message_basket_elements_preview{% endtrans %}#}
+                            {#<a href="{{ url('sonata_basket_index') }}">{% trans from 'SonataBasketBundle' %}view_basket{% endtrans %}</a>#}
+                        {#{% else %}#}
+                            {#{% trans from 'SonataBasketBundle' %}message_no_basket_elements{% endtrans %}#}
+                        {#{% endif %}#}
+                    {#</div>#}
+                    <p class="lead text-right panier pull-left hidden-xs" id="panier">
+                        <a class="text-uppercase panier" href="#"> <i class="glyphicon glyphicon-shopping-cart"></i> [0] <i class="fa fa-euro"></i> </a>&nbsp;
+                        {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+                            <a href="{{ path('account_homepage') }}" class="text-uppercase btn btn-success btn-sm"><i class="fa fa-sign-in"></i> {{ 'header.menu.connexion'|trans }} </a>
+                            <a href="#" class="text-uppercase btn btn-primary btn-sm"><i class="glyphicon glyphicon-pencil"></i> {{ 'header.menu.inscription'|trans }} </a>
+                        {% else %}
+                            <span style="color: #FFFFFF">|</span> &nbsp;<a href="#" class="text-uppercase btn btn-link" style="color: #FFFFFF"><i class="fa fa-user"></i> {{ app.user.username|upper }} </a>
+                            <span style="color: #FFFFFF">|</span> &nbsp;<a href="#" class="text-uppercase btn btn-link" style="color: #FFFFFF" title="{{ 'header.menu.deconnexion'|trans }}"><i class="fa fa-power-off"></i></a>
+                        {% endif %}
+                    </p>
+                </div>
+            </center>
+        </div>
+    </div>
+</div>
+
+{#{{ knp_menu_render('home') }}#}
+{#{{ knp_menu_render('courses') }}#}
+
+<nav class="navbar navbar-inverse navbar-static-top" id="mune">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand text-uppercase hidden-sm hidden-md hidden-lg navbar-link" href="#">
+                Artiste Plasticien
+            </a>
+            <a class="navbar-brand hidden-sm hidden-md hidden-lg" href="#"> <i class="glyphicon glyphicon-shopping-cart"></i> [0] </a>
+            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        </div>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav">
+                <li id="home" role="presentation"><a class="text-uppercase" href="#" title="{{ 'header.menu.home'|trans }}"><i class="icon ion-ios-home"></i> {{ 'header.menu.home'|trans }} </a></li>
+                <li id="catalog" role="presentation"><a class="text-uppercase" href="{{ path('gallery_homepage') }}" title="{{ 'header.menu.gallery'|trans }}"><i class="glyphicon glyphicon-th"></i> {{ 'header.menu.gallery'|trans }} </a></li>
+{#                <li id="course" role="presentation"><a class="text-uppercase" href="#" title="{{ 'header.menu.courses'|trans }}"><i class="icon ion-ios-bookmarks"></i> {{ 'header.menu.courses'|trans }} </a></li>#}
+                <li id="agenda" role="presentation"><a class="text-uppercase" href="#" title="{{ 'header.menu.agenda'|trans }}"><i class="fa fa-calendar"></i> {{ 'header.menu.agenda'|trans }} </a></li>
+                <li id="news" role="presentation"><a class="text-uppercase" href="#" title="{{ 'header.menu.blog'|trans }}"><i class="icon ion-social-rss"></i> {{ 'header.menu.blog'|trans }} </a></li>
+                <li id="about" role="presentation"><a class="text-uppercase" href="#" title="{{ 'header.menu.about'|trans }}"><i class="fa fa-institution"></i> {{ 'header.menu.about'|trans }} </a></li>
+                <li id="faq" role="presentation"><a class="text-uppercase" href="#" title="{{ 'header.menu.faq'|trans }}"><i class="glyphicon glyphicon-question-sign"></i> {{ 'header.menu.faq'|trans }} </a></li>
+{#                <li {% block activePartner %}{% endblock %} role="presentation"><a class="text-uppercase" href="{{ path() }}"><i class="glyphicon glyphicon-star"></i> {{ 'header.menu.about'|trans }} </a></li>#}
+                <li id="contact" role="presentation"><a class="text-uppercase" href="#" title="{{ 'header.menu.contact'|trans }}"><i class="glyphicon glyphicon-phone"></i> {{ 'header.menu.contact'|trans }} </a></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <span class="hidden-sm hidden-md hidden-lg">
+                {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <li role="presentation"><a class="text-uppercase" href="#"><i class="fa fa-sign-in"></i> Connexion </a></li>
+                    <li role="presentation"><a class="text-uppercase" href="#"><i class="glyphicon glyphicon-pencil"></i> Inscription </a></li>
+                {% else %}
+                    <li role="presentation"><a class="text-uppercase" href="{{ path('fos_user_profile_show') }}"><i class="fa fa-user"></i> {{ app.user.username|upper }} </a></li>
+                    <li role="presentation"><a class="text-uppercase" href="{{ path('sonata_user_security_logout') }}"><i class="fa fa-sign-out"></i> {{ 'header.menu.deconnexion'|trans }} </a></li>
+                {% endif %}
+                </span>
+
+                <li class="dropdown">
+                    {% if locale == 'fr' %}
+                        <a class="dropdown-toggle text-uppercase" data-toggle="dropdown" href="#"><i class="fa fa-language"></i> Fr <b class="caret"></b> </a>
+                    {% elseif locale == 'en' %}
+                        <a class="dropdown-toggle text-uppercase" data-toggle="dropdown" href="#"><i class="fa fa-language"></i> En <b class="caret"></b> </a>
+                    {% endif %}
+                    <ul class="dropdown-menu">
+                        {% if locale == 'fr' %}
+                            <li><a class="text-uppercase" href="#">En</a></li>
+                        {% elseif locale == 'en' %}
+                            <li><a class="text-uppercase" href="#">Fr</a></li>
+                        {% endif %}
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+

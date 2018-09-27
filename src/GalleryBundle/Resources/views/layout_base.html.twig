@@ -1,0 +1,74 @@
+{% extends "base.html.twig" %}
+
+{% block meta %}
+<meta name="description" content="{% block description %}{% endblock %}"/>
+<meta name="robots" content="noodp"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="{{ autors }}">
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{% block ogtitle %}{% endblock %}" />
+<meta property="og:description" content="{% block ogdescription %}{% endblock %}" />
+<meta property="og:url" content="{% block ogurl %}{% endblock %}" />
+<meta property="og:image" content="{% block ogimage %}{% endblock %}" />
+<meta property="og:image:width" content="{% block ogImageWidth %}{% endblock %}" />
+<meta property="og:image:height" content="{% block ogImageHeight %}{% endblock %}" />
+<meta property="og:site_name" content="Artiste Plasticien" />
+<meta name="msapplication-TileImage" content="{{ asset('msapplication-TileImage.png') }}" />
+<link rel="canonical" href="{% block url %}{% endblock %}" />
+{% endblock %}
+
+{% block stylesheets %}
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="https://daneden.github.io/animate.css/animate.min.css">
+    
+    {% stylesheets
+        
+        '@GalleryBundle/Resources/public/bootstrap/css/bootstrap.min.css'
+        '@GalleryBundle/Resources/public/fonts/font-awesome.min.css'
+        '@GalleryBundle/Resources/public/fonts/ionicons.min.css'
+        '@GalleryBundle/Resources/public/css/styles.min.css'
+    %}
+    <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
+    {% endstylesheets %}
+
+{% endblock %}
+
+{% block javascripts %}
+    
+    {% javascripts
+        '@GalleryBundle/Resources/public/js/jquery.min.js'
+        '@GalleryBundle/Resources/public/bootstrap/js/bootstrap.min.js'
+        '@GalleryBundle/Resources/public/js/script.min.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    <script>
+        $(function (){
+            $(".close").click(function() {
+                $(".alert").hide("slow");
+            });
+        });
+    </script>
+    {% block javascripts_local %}
+    {% endblock %}
+{% endblock %}
+
+{% block classCss %}
+     class="body"
+{% endblock %}
+
+{% block body %}
+    {% include '@Gallery/navigation/header.html.twig' %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {% block body_content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+    {% include '@Gallery/navigation/footer.html.twig' %}
+{% endblock %}
