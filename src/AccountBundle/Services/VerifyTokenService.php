@@ -34,7 +34,7 @@ class VerifyTokenService {
         curl_close($curl);
 //        dump(json_decode($result, true));die;
         if ((isset($response->{'code'}) && $response->{'code'} == 403) || (isset($response->{'error'})) ) {
-            $session->clear();
+            
             return false;
         }
         

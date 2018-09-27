@@ -10,7 +10,6 @@ use Symfony\Component\HttpFoundation\Request;
 class SecurityController extends Controller {
 
     public function LoginAction(Request $request) {
-        $session = new Session();
         $form = $this->createForm(LoginType::class);
         $form->handleRequest($request);
 
@@ -45,10 +44,10 @@ class SecurityController extends Controller {
 
                 if ($info['http_code'] == 200) {
                     $dataJson = json_decode($page_content, true);
-                    
-                    $session->set('access_token', $dataJson['access_token']);
-                    $session->set('expires_in', $dataJson['expires_in']);
-                    $session->set('refresh_token', $dataJson['refresh_token']);
+//                    
+//                    $session->set('access_token', $dataJson['access_token']);
+//                    $session->set('expires_in', $dataJson['expires_in']);
+//                    $session->set('refresh_token', $dataJson['refresh_token']);
 
                     curl_close($curl);
 
@@ -57,7 +56,7 @@ class SecurityController extends Controller {
             }
         }
 
-        return $this->render('@Account/Default/index.html.twig', [
+        return $this->render('@Account/Layouts/login.html.twig', [
                 'form' => $form->createView()
             ]
         );

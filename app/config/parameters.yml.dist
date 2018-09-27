@@ -4,13 +4,16 @@
 parameters:
     secret: 8f64953a0356d5de4626b5dc3457a24aeb54ec26
 
-    admin_domain:   admin.artiste-plasticien.com
-    partner_domain: partner.artiste-plasticien.com
-    gallery_domain: gallery.artiste-plasticien.com
-    account_domain: account.artiste-plasticien.com
-    api_domain:     api.artiste-plasticien.com
-    redirect_uri:   www.artiste-plasticien.com
+    admin_domain:             admin.artiste-plasticien.com
+    partner_domain:           partner.artiste-plasticien.com
+    gallery_domain:           gallery.artiste-plasticien.com
+    account_domain:           account.artiste-plasticien.com
+    api_domain:               api.artiste-plasticien.com
+    redirect_uri:             www.artiste-plasticien.com
 
-    client_id:      1_1yqfuy07h6pwg44cg80g88kwcs0c4k8c4ws84co4kkckko8gcg
-    client_secret:  5tbepzr3a8kckkossco88gow8c8ww0s04wwk44ccgoooo0kkc4
-    api_uri:        '%api_domain%'
+    client_id:                1_1yqfuy07h6pwg44cg80g88kwcs0c4k8c4ws84co4kkckko8gcg
+    client_secret:            5tbepzr3a8kckkossco88gow8c8ww0s04wwk44ccgoooo0kkc4
+    api_uri:                  '%api_domain%'
+
+    recaptcha_public_key:     6LeATQETAAAAAFUbk-oyBdHLZwdaw_7i9xI8dIu3
+    recaptcha_private_key:    6LeATQETAAAAAO2UUT4lZQN7Kf_EYjnV_P436vXE

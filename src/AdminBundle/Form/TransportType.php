@@ -10,6 +10,8 @@ use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\ButtonType;
+use EWZ\Bundle\RecaptchaBundle\Form\Type\EWZRecaptchaType;
+use EWZ\Bundle\RecaptchaBundle\Validator\Constraints\IsTrue as RecaptchaTrue;
 
 /**
  * Description of TransportType
@@ -25,6 +27,9 @@ class TransportType extends AbstractType {
         $builder
                 ->add('name', TextType::class, [
                     'mapped' => false,
+                    'attr' => [
+                        'class' => 'form-control'
+                    ],
                     'constraints' => [
                         new NotBlank(),
                         new Length(array('min' => 2)),
@@ -37,6 +42,12 @@ class TransportType extends AbstractType {
                         new Length(array('min' => 3)),
                     ]
                 ])
+                ->add('recaptcha', EWZRecaptchaType::class, [
+                    'mapped'      => false,
+                    'constraints' => [
+                        new RecaptchaTrue()
+                    ]
+        ])
                 ;
     }
     

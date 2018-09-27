@@ -1,8 +1,9 @@
 {% extends "@Admin/layout_base.html.twig" %}
+{% form_theme form '@EWZRecaptcha/Form/ewz_recaptcha_widget.html.twig' %}
 
 {% block title %}Transport{% endblock %}
 
-{% block body %}
+{% block page_content %}
 <a href="{{ path('transport_index', {'token': token}) }}" title="">liste</a><br>
 {{ form_start(form) }}
 
@@ -11,6 +12,8 @@
 
 {{ form_errors(form.detail) }}
 {{ form_widget(form.detail) }}
+
+{{ form_widget(form.recaptcha) }}
 
 <button type="submit">save</button>
 

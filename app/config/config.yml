@@ -4,6 +4,7 @@ imports:
     - { resource: services.yml }
     - { resource: "@AdminBundle/Resources/config/services.yml" }
     - { resource: "@AccountBundle/Resources/config/services.yml" }
+    - { resource: "@GalleryBundle/Resources/config/services.yml" }
  
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -11,6 +12,9 @@ parameters:
     locale: fr
 
 framework:
+    templating:
+        engines: ['twig', 'php']
+        
     #esi: ~
     translator: ~
     secret: '%secret%'
@@ -41,3 +45,20 @@ twig:
 sensio_framework_extra:
    router:
         annotations: false
+        
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~
+        
+ewz_recaptcha:
+    public_key:  '%recaptcha_public_key%'
+    private_key: '%recaptcha_private_key%'
+    # Not needed as "%kernel.default_locale%" is the default value for the locale key
+    locale_key:  %kernel.default_locale%
+    locale_from_request: true
+    enabled: false
+    ajax: true
+    api_host: recaptcha.net
+
