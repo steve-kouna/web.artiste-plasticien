@@ -48,6 +48,7 @@ twig:
         tel: %app_tel%
         mail: %app_email%
         autors: %app_autors%
+        api_uri: '%api_uri%'
 
 
 sensio_framework_extra:
