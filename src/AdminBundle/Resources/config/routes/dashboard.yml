@@ -2,4 +2,5 @@ dashboard:
     path:     /
     methods:  [GET]
     defaults: { _controller: AdminBundle:Dashboard:index }
+
     

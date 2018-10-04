@@ -1,0 +1,74 @@
+{% extends "@Gallery/layout_base.html.twig" %}
+
+{% block title %}
+    Galerie
+{% endblock %}
+
+{% set title = 'header.slogan'|trans %}
+{% set desc = 'header.slogan'|trans %}
+
+{#{% block title %}{{ title }}{% endblock %}#}
+{% block description %}{{ desc }}{% endblock %}
+{% block ogtitle %}{{ title }}{% endblock %}
+{% block ogdescription %}{{ desc }}{% endblock %}
+
+{% block ogimage %}
+    {{ asset('assets/img/logoAP2.png') }}
+{% endblock %}
+
+{% block ogImageWidth %}500{% endblock %}
+{% block ogImageHeight %}500{% endblock %}
+{% block ogurl %}{{ app.request.uri }}{% endblock %}
+{% block url %}{{ app.request.uri }}{% endblock %}
+
+{% block body_content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center text-uppercase"> {{ 'home.label_artworks'|trans|raw }} </h2>
+                <div class="row">
+                    {#{{ dump(works) }}#}
+                    {% for work in works.data %}
+                        <div class="col-md-6 col-sm-6 col-lg-4">
+                            <div class="thumbnail">
+                                {% for image in work._embedded.images if image|first %}
+                                    <img class="img-responsive" alt="{{ work.name }}" title="{{ work.name }}" src="http://{{ api_uri }}/{{ image._links.filepath.href }}">
+                                {% endfor %}
+                                <div class="caption">
+                                    <h4 class="text-nowrap"> 
+                                        <a href="#" rel="tooltip" data-original-title="Plus d'informations">
+                                            <i class="glyphicon glyphicon-bookmark"></i> 
+                                            {{ work.name }} 
+                                        </a>
+                                    </h4>
+                                    <p class="text-nowrap"> 
+                                        <a href="#" rel="tooltip" data-original-title="Plus de détails">
+                                            <i class="glyphicon glyphicon-user"></i> 
+                                            Auteur
+                                            {#{{ work._embedded.author.pseudo }}#}
+                                        </a>
+                                    </p>
+                                    <div>
+                                        <h3 class="text-nowrap text-info pull-right" id="prix">
+                                            <a href="#" rel="tooltip" data-original-title="Afficher tous les commentaires">
+                                                <i class="glyphicon glyphicon-comment icones"></i> [{{ work._embedded.comments|length }}] 
+                                            </a>
+                                        </h3>
+                                                <h3 class="text-nowrap text-danger" id="prix"><strong>{{ work.price|number_format }} FCFA </strong></h3>
+                                        <button class="btn btn-primary btn-block" type="button">
+                                            <i class="glyphicon glyphicon-shopping-cart"></i> Ajouter au panier
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+                <div id="space"></div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

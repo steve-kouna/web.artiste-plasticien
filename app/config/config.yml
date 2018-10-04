@@ -10,6 +10,9 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr
+    app_tel : '+237697610588'
+    app_email: 'artisteplasticien1@gmail.com'
+    app_autors: 'Steve KOUNA'
 
 framework:
     templating:
@@ -41,6 +44,11 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    globals:
+        tel: %app_tel%
+        mail: %app_email%
+        autors: %app_autors%
+        api_uri: '%api_uri%'
 
 sensio_framework_extra:
    router:

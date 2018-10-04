@@ -1,6 +1,6 @@
 gallery:
     resource: "@GalleryBundle/Resources/config/routing.yml"
-    prefix:   /
+    host:     "%gallery_domain%"
 
 account:
     resource: "@AccountBundle/Resources/config/routing.yml"
