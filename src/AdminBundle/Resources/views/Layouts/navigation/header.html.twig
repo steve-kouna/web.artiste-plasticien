@@ -4,9 +4,11 @@
     <div class="page-header-inner ">
         <!-- BEGIN LOGO -->
         <div class="page-logo">
-            <a href="#">
-                
-                <img src="../assets/layouts/layout4/img/logo-light.png" alt="logo" class="logo-default" /> </a>
+            <a href="{{ path('dashboard', {'token': token}) }}">
+                {% image '@GalleryBundle/Resources/public/assets/img/apBlanc.png' %}
+                    <img src="{{ asset_url }}" alt="Artiste Plasticien | {{ 'header.slogan'|trans }}" width="65" height="65" id="logoAP" style="margin-top: 5px;" >
+                {% endimage %}
+            </a>
             <div class="menu-toggler sidebar-toggler">
                 <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
             </div>
