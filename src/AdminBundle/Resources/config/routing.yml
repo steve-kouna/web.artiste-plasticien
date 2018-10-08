@@ -1,3 +1,7 @@
+admin_categories:
+    prefix:     /{token}/categories
+    resource: "@AdminBundle/Resources/config/routes/categories.yml"
+
 admin_dashboard:
     prefix:     /{token}
     resource: "@AdminBundle/Resources/config/routes/dashboard.yml"
