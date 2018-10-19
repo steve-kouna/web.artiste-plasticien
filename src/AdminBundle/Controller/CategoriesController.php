@@ -14,7 +14,7 @@ use AdminBundle\Form\CategoryType;
  */
 class CategoriesController extends Controller {
 
-    public function indexWorkAction($token) {
+    public function indexCategorieWorkAction($token) {
         $verify_token = $this->container->get('app.verify_token')->tokenTest($token, $this->container->getParameter('api_uri'));
         if ($verify_token) {
             $curl = curl_init();
@@ -58,7 +58,7 @@ class CategoriesController extends Controller {
         return $this->redirectToRoute('account_homepage');
     }
 
-    public function newWorkAction(Request $request, $token) {
+    public function newCategorieWorkAction(Request $request, $token) {
         $verify_token = $this->container->get('app.verify_token')->tokenTest($token, $this->container->getParameter('api_uri'));
         if ($verify_token) {
             $form = $this->createForm(CategoryType::class);
@@ -88,7 +88,7 @@ class CategoriesController extends Controller {
                     $response = json_decode($result);
                     curl_close($curl);
 
-                    return $this->redirectToRoute('transport_show', ['token' => $token, 'id' => $response->id]);
+                    return $this->redirectToRoute('categorie_work_index', ['token' => $token, 'id' => $response->id]);
                 }
             }
 

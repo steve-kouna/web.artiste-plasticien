@@ -1,10 +1,10 @@
-transport_indexWork:
+categorie_work_index:
     path:     /
     methods:  [GET]
-    defaults: { _controller: AdminBundle:Categories:indexWork }
+    defaults: { _controller: AdminBundle:Categories:indexCategorieWork }
     
-transport_newWork:
+categorie_work_new:
     path:     /new
     methods:  [GET, POST]
-    defaults: { _controller: AdminBundle:Categories:newWork }
+    defaults: { _controller: AdminBundle:Categories:newCategorieWork }
     
